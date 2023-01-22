@@ -1,0 +1,64 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Implementation details	report.tex	/^  \\section{Implementation details}$/;"	s
+Node	solution.java	/^        public Node(int index) {$/;"	m	class:solution.Node
+Node	solution.java	/^    private static class Node {$/;"	c	class:solution
+Node	solution2.java	/^		public Node(int index) {$/;"	m	class:solution2.Node
+Node	solution2.java	/^	private static class Node {$/;"	c	class:solution2
+Results	report.tex	/^  \\section{Results}$/;"	s
+Tuple	solution2.java	/^		public Tuple(Node startNode, int weight) {$/;"	m	class:solution2.Tuple
+Tuple	solution2.java	/^	private static class Tuple {$/;"	c	class:solution2
+compareTo	solution.java	/^    	private int compareTo(Node n1, Node n2){$/;"	m	class:solution.Node	file:
+createGraph	solution.java	/^    private PriorityQueue<Node> createGraph() {$/;"	m	class:solution	file:
+createGraph	solution2.java	/^	private ArrayList<Node> createGraph() {$/;"	m	class:solution2	file:
+d	solution.java	/^        int d = Integer.MAX_VALUE;$/;"	f	class:solution.Node
+dataPairs	run.java	/^    private static HashMap<String, Integer> dataPairs;$/;"	f	class:run	file:
+dataPairs	run2.java	/^    private static HashMap<String, Integer> dataPairs;$/;"	f	class:run2	file:
+dataPairs	run3.java	/^    private static HashMap<String, Integer> dataPairs;$/;"	f	class:run3	file:
+dataPairs	solution.java	/^        HashMap<String, Integer> dataPairs = dataPairsNode;$/;"	f	class:solution.Node
+dataPairs	solution.java	/^    private HashMap<String, Integer> dataPairs;$/;"	f	class:solution	file:
+dataPairs	solution2.java	/^		HashMap<String, Integer> dataPairs = dataPairsNode;$/;"	f	class:solution2.Node
+dataPairs	solution2.java	/^	private HashMap<String, Integer> dataPairs;$/;"	f	class:solution2	file:
+dataPairsNode	solution.java	/^    private static HashMap<String, Integer> dataPairsNode;$/;"	f	class:solution	file:
+dataPairsNode	solution2.java	/^	private static HashMap<String, Integer> dataPairsNode;$/;"	f	class:solution2	file:
+edges	solution.java	/^	ArrayList<Integer> edges;$/;"	f	class:solution.Node
+equals	solution.java	/^    	public boolean equals(Object obj) {$/;"	m	class:solution.Node
+getWeight	solution.java	/^        int getWeight(Node n) {$/;"	m	class:solution.Node
+getWeight	solution2.java	/^		int getWeight(Node n) {$/;"	m	class:solution2.Node
+index	solution.java	/^        int index;$/;"	f	class:solution.Node
+index	solution2.java	/^		int index;$/;"	f	class:solution2.Node
+main	run.java	/^    public static void main(String[] args) throws IOException {$/;"	m	class:run
+main	run2.java	/^    public static void main(String[] args) throws IOException {$/;"	m	class:run2
+main	run3.java	/^    public static void main(String[] args) throws FileNotFoundException {$/;"	m	class:run3
+neighbours	run.java	/^    private static ArrayList<ArrayList<Integer>> neighbours;$/;"	f	class:run	file:
+neighbours	run2.java	/^    private static ArrayList<ArrayList<Integer>> neighbours;$/;"	f	class:run2	file:
+neighbours	run3.java	/^    private static ArrayList<ArrayList<Integer>> neighbours;$/;"	f	class:run3	file:
+neighbours	solution.java	/^        HashMap<Integer, Node> neighbours = new HashMap<>();$/;"	f	class:solution.Node
+neighbours	solution2.java	/^		HashMap<Integer, Node> neighbours = new HashMap<>();$/;"	f	class:solution2.Node
+nodes	solution.java	/^    private ArrayList<ArrayList<Integer>> nodes;$/;"	f	class:solution	file:
+nodes	solution2.java	/^	private ArrayList<ArrayList<Integer>> nodes;$/;"	f	class:solution2	file:
+p	solution.java	/^        Node p;$/;"	f	class:solution.Node
+p	solution2.java	/^		Node p;$/;"	f	class:solution2.Node
+prim	solution.java	/^    private int prim(PriorityQueue<Node> pool) {$/;"	m	class:solution	file:
+prim	solution2.java	/^	private int prim(ArrayList<Node> graph) {$/;"	m	class:solution2	file:
+readData	run.java	/^    private static void readData() throws IOException {$/;"	m	class:run	file:
+readData	run2.java	/^    private static void readData() throws IOException {$/;"	m	class:run2	file:
+readData	run3.java	/^    private static void readData() throws FileNotFoundException {$/;"	m	class:run3	file:
+readInt	run.java	/^    private static int readInt(InputStream in) throws IOException {$/;"	m	class:run	file:
+readInt	run2.java	/^    private static int readInt(BufferedReader in) throws IOException {$/;"	m	class:run2	file:
+run	run.java	/^public class run{$/;"	c
+run2	run2.java	/^public class run2{$/;"	c
+run3	run3.java	/^public class run3{$/;"	c
+solution	solution.java	/^    public solution(HashMap<String, Integer> dataPairs, ArrayList<ArrayList<Integer>> nodes\/*, TreeMap<Integer, String> edges*\/) {$/;"	m	class:solution
+solution	solution.java	/^public class solution {$/;"	c
+solution2	solution2.java	/^	public solution2(HashMap<String, Integer> dataPairs, ArrayList<ArrayList<Integer>> nodes) {$/;"	m	class:solution2
+solution2	solution2.java	/^public class solution2 {$/;"	c
+startNode	solution2.java	/^		Node startNode;$/;"	f	class:solution2.Tuple
+toString	solution.java	/^        public String toString() {$/;"	m	class:solution.Node
+toString	solution2.java	/^		public String toString() {$/;"	m	class:solution2.Node
+visited	solution.java	/^	boolean visited = false; $/;"	f	class:solution.Node
+weight	solution2.java	/^		int weight;$/;"	f	class:solution2.Tuple

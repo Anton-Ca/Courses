@@ -1,0 +1,22 @@
+import java.util.*;
+import java.text.DecimalFormat;
+
+public class solution {
+	public solution(ArrayList<Integer> points) {
+
+		//long a = System.currentTimeMillis();
+		//System.out.printf(solve());
+		//long b = System.currentTimeMillis();
+		//System.out.println("TIME TO EXECUTE ALGORITHM: " + (b - a) + "\n");
+	}
+
+	public double solve() {
+
+	}
+	
+	public double findClosestPair() {
+
+	}
+		
+	
+}

@@ -1,0 +1,34 @@
+"algorithm stable_matching is"
+    "W is a set of n women"
+    "M is a set of n men"
+    "add each man m to a list"
+        "Initialize all m ∈ M and w ∈ W to free"
+    """while p != null 
+        " Take out m first element of p 
+        "" Choose the woman that m prefers the most and that he has not yet proposed to 
+        "" if w has no partner then
+            ""(m, w) becomes a pair
+        "" else if w prefers m over her current partner m2 then 
+            "" remove the pair(m2, w)
+            "" (m, w) becomes a pair
+            "" add m2 to p
+        "" else
+            "" add m to p
+    end
+
+
+
+
+
+    w := first woman on m's list to whom m has not yet proposed
+        if w is free then
+            (m, w) become engaged
+        else some pair (m', w) already exists
+            if w prefers m to m' then
+                m' becomes free
+                (m, w) become engaged 
+            else
+                (m', w) remain engaged
+            end if
+        end if
+    repeat

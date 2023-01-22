@@ -1,0 +1,74 @@
+Datastruktur - Variabler som här ihop och struktureras på något vis. Ex. Vektor (Array).
+Abstrakt datatyp - Abstrakt modell + operationer. Ex. Lista sätta in element, ta reda på grejer.
+
+Ska kunna:
+  Urskilja vilken datastruktur som är lämplig och vad skillnader är. 
+  Kunna resonera kring vilken algoritm som passar och inte tar för lång tid.
+  Kunna testa implementeringen och se att programmet fungerar / är körbart. 
+
+
+Repetition: 
+
+UML - Unified Modelling Language 
+Ex. Klassdiagram 
+
+
+Superklass (Ex. Shape)
+Subklass (Ex. Circle, Square) 
+
+
+import se.lth.cs.pt.window.SimpleWindow;
+
+public class Circle extends Shape {}
+
+
+Konstruktor - Referar till skapandet av ett nytt objekt.
+ 
+Abstrakt metod referar till en metod som inte implementerats, utan som enbart deklareras. Implementeringen sker sedan i en subklass istället. 
+Ex. public abstract void draw(w SimpleWindow);
+Observera inga måsvingar.  
+
+void - En metod som inte returnerar något värde.
+
+protected - Får användas i klass + subklasser.
+public - Får användas utanför klassen.
+private - Får användas i klassen. 
+
+Interface - Som en Superklass fast enbart uppräkning av publika abstrakta metoder
+Streckad linje i UML skissen för att markera att subklasserna endast implementerar interfacet. 
+
+package interface_namn_start;
+
+public interface namn {
+	double area();
+}
+
+... i main programmet:
+
+public class 123 implements namn{
+	...
+}
+
+namn[] obj = new namn[1];
+
+...
+
+Alla metoder i interfacet MÅSTE "implements" för att programmet ska gå att köra.
+
+
+@Override - Betyder skugga. Vid implementation av abstrakt metod (samt skuggning).
+@Overload - Betyder överlagra. Vid implementation av abstrakt metod (samt skuggning).
+Skillnad override flera metoder med samma namn, men deras parametrar skiljer sig åt. Override när man bara vill ge en metod ny implementering utan att radera den gamla. (Man behöver inte skriva ut dem, men kan vara bra att meddela).
+
+Interface till skillnad från class innebär att man kan importera flera interfaces. En klass kan endast ärva från en superklass. 
+Ex. 
+public class Square extends Shape implements interface1, interface2 {
+} 
+
+Använd arv när det är en massa gemensamma attribut och metoder, men försök använda interface så långt som möjligt. 
+
+Likheter - Kan inehålla abstrakta metoder. Kan inte instansieras (konstrueras). 
+Skillnader - En klass kan importera flera interfaces, men endast en klass. Superklass kan innehålla konstruktor och attribut, samt icke abstrakta metoder. 
+
+ 
+

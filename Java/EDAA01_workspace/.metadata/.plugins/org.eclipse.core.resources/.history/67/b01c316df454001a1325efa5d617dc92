@@ -1,0 +1,186 @@
+package bst;
+
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.Comparator;
+
+public class BinarySearchTree<E> {
+	BinaryNode<E> root; // Används också i BSTVisaulizer
+	int size; // Används också i BSTVisaulizer
+	private Comparator<E> comp;
+
+	/**
+	 * Constructs an empty binary search tree.
+	 */
+	public BinarySearchTree() {
+		root = null;
+		size = 0;
+// 			Vad som händer i Lambdauttrycket nedan
+//			comp = new Comparator<E>() {
+//			@Override
+//			public int compare(E o1, E o2) {
+//				return ((Comparable<E>) o1).compareTo(o2);
+//			}
+//		};
+		comp = (o1, o2) -> ((Comparable<E>) o1).compareTo(o2);
+	}
+
+	/**
+	 * Constructs an empty binary search tree, sorted according to the specified
+	 * comparator.
+	 */
+	public BinarySearchTree(Comparator<E> comp) {
+		root = null;
+		size = 0;
+		this.comp = comp;
+	}
+
+	/**
+	 * Inserts the specified element in the tree if no duplicate exists.
+	 * 
+	 * @param x element to be inserted
+	 * @return true if the the element was inserted
+	 */
+	public boolean add(E x) {
+		BinaryNode<E> boi = new BinaryNode<E>(x);
+		if (root == null) {
+			size++;
+			root = boi;
+			return true;
+		} else
+			return add(x, root);
+	}
+
+	/**
+	 * Inserts the specified element in the tree.
+	 * 
+	 * @param x element to be inserted
+	 * @param b BinaryNode to be inserted
+	 * @return true if the the element was inserted
+	 */ // Överlagring
+	private boolean add(E x, BinaryNode<E> b) {
+		if (((Comparable<E>) b.element).compareTo(x) < 0) {
+			if (b.left == null) {
+				b.left = new BinaryNode(x);
+				size++;
+			} else
+				return add(x, b.left);
+		}
+		if (((Comparable<E>) b.element).compareTo(x) > 0) {
+			if(b.right == null) {
+				b.right = new BinaryNode(x);
+				size++;
+			} else
+				return add(x, b.right);
+		} 
+		return false;
+	}
+
+	/**
+	 * Computes the height of tree.
+	 * 
+	 * @return the height of the tree
+	 */
+	public int height() {
+		int nbr = 0;
+		if (root == null) {
+			return nbr;
+		}
+		return height(root);
+	}
+
+	// Överlagring
+	private int height(BinaryNode<E> b) {
+		if (b.left == null && b.right == null) {
+			return 1;
+		} else if (b.left == null) {
+			return 1 + height(b.right);
+		} else if (b.right == null) {
+			return 1 + height(b.left);
+		} else {
+			return 1 + Math.max(height(b.right), height(b.left));
+		}
+	}
+//	public int height() {
+//		if (root == null) {
+//			return 0;
+//		} else {
+//			return height(root);
+//		}
+//	}
+//	
+//	private int height(BinaryNode<E> b) {
+//		if (root == null) {
+//			return 0;
+//		} else {
+//			return (int) (1 + Math.max(height(root.left), height(root.right)));
+//		}
+
+	/**
+	 * Returns the number of elements in this tree.
+	 * 
+	 * @return the number of elements in this tree
+	 */
+	public int size() {
+		return size;
+	}
+
+	/**
+	 * Removes all of the elements from this list.
+	 */
+	public void clear() {
+		root = root.left = root.right = null; 
+	}
+
+	/**
+	 * Print tree contents in inorder.
+	 */
+	public void printTree() {
+		if(root == null) {
+			return;
+		} 
+		printTree(root);
+		
+	}
+	
+	private void printTree(BinaryNode<E> b) {
+		if(b.element == null) {
+			return;
+		} 
+		printTree(b.left);
+	}
+
+	/**
+	 * Builds a complete tree from the elements in the tree.
+	 */
+	public void rebuild() {
+
+	}
+
+	/*
+	 * Adds all elements from the tree rooted at n in inorder to the list sorted.
+	 */
+	private void toArray(BinaryNode<E> n, ArrayList<E> sorted) {
+
+	}
+
+	/*
+	 * Builds a complete tree from the elements from position first to last in the
+	 * list sorted. Elements in the list a are assumed to be in ascending order.
+	 * Returns the root of tree.
+	 */
+	private BinaryNode<E> buildTree(ArrayList<E> sorted, int first, int last) {
+		return null;
+	}
+
+	static class BinaryNode<E> {
+		E element;
+		BinaryNode<E> left;
+		BinaryNode<E> right;
+
+		private BinaryNode(E element) {
+			this.element = element;
+		}
+	}
+
+}

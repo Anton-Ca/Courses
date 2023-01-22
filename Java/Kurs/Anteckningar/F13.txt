@@ -1,0 +1,39 @@
+Idag:
+ Prioritetskö
+ Heap 
+
+Lista : Dubbellänkad 
+Stack, FIFO kö : Vektor, Enkellänkad lista
+Mängd, Map : Binärt sökträd, Hashtabeller
+Prioritetskö : Heap
+
+
+Prioritetskö kan implementeras som både lista, variant av hashMap samt Binärt sökträd OM vi hittar ett sätt att tillåta dubletter.
+
+
+Heap:
+
+förälder ≤ barn
+
+Heap är egentligen en vektor som är sorterad på ett väldigt speciellt sätt, men illustreras lättast som ett binärt träd. 
+Har även en size.
+
+En förälder på plats i har sina barn på platserna 2i+1, 2i+2 
+Ett barn på plats i har sin förälder på platsen (i-2)/2 
+
+Offer: Sätt in sist i listan (neddersta nivån längst till höger). Sortera om genom att byta plats på element. 
+Peak: Kolla på elementet på plats root. 
+Poll: Ta bort root. Flytta sista insatta talet till root. Percolate up. 
+
+offer för heap har O(log(n))
+peak har O(1)
+poll har O(log(n))
+
+Man kan välja att skicka med en komparator som parameter om man vill definiera en egen compareTo metod och exempelvis hämta ut elementen i en viss ordning. 
+
+
+MaxHeap fungerar som en vanlig Heap, men största elementet finns på plats 1 i vektorn.
+
+barn ≤ förälder 
+
+Exempel på vad jag ska kunna, se sista sliden. 

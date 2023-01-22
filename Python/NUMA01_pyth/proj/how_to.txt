@@ -1,0 +1,1 @@
+Latest version is on zipp folder, you just need to run the gui.py file and not use old data.

@@ -1,0 +1,43 @@
+Suoku Strategy:
+
+- En siffra är tillåten om:
+	- Raden innehåler inte någon likadan siffra
+	- Kolumnen innehåler inte någon likadan siffra
+	- [n:n+2 , m:m+2] där [Rad, Kolonn] innehåler inte någon likadan siffra 
+
+- Skapa 9 st vektorer med 9 element av typen (int) i varje. 
+- Brädet fylls (.fill()) med 0:or. 
+- Några 0:or byts ut mot random tillåtna siffror
+
+
+
+
+
+Sammarbeta genom att koda tillsammans från olika datorer:
+
+Git
+
+Skapa Git profil på github.com
+Skapa ett nytt projekt
+Create Git Repository
+Klistra in url från ditt web git projekt 
+Eclipse -> Högerklicka projektet-> Team -> Share -> lägg till
+Eclipse -> Team -> Share -> Lägg till kommentar -> Välj filer -> commit and push
+
+Bjud in användare -> Välj developer 
+
+Eclipse -> import -> Git -> ... -> clone URI -> Klistra in url från web git projekt 
+
+När man forsätter slipper man ange URL:er, då går push och pull snabbare. 
+
+
+Vid konflikter (båda skriver kod på samma rad) uppstår en massa konstiga tecken och ger kompileringsfel. 
+
+
+
+För Android:
+
+Installera Android Studio 
+ + Start new ...
+Empty activity 
+

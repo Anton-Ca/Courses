@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[colorinlistoftodos]{todonotes}
+\pagestyle{empty}
+
+\title{Stable Matching Report}
+\author{Marlon Abeln}
+
+\begin{document}
+  \maketitle
+
+  \section{Results}
+
+  \todo[inline]{Briefly comment the results, did the script say all your solutions were correct? Approximately how long time does it take for the program to run on the largest input? What takes the majority of the time?}
+
+The implementation was tested using the  provided scripts. This Showed that all tests passed. It took roughly undersomewhat under a minute to run the solution on the largest inputs. The majority of the testst where the matching and checking portions of those tests. From the solution. From the implemented solution, the matching took the longest, this is as for large inputs, many potential prteners must be processed. 
+
+  \section{Implementation details}
+
+  \todo[inline]{How did you implement the solution? Which data structures were used? Which modifications to these data structures were used? What is the overall running time? Why?}
+
+A Hashmap was used in order to map an Integer to an arrayList. The integer was the number representing the man/woman and the arraylist was a list of integers representing a ranked list of preferences for the given man and woman.  Because the lists are not ordered, we have to search through them. It is possible to use a set of single men that we take from to not have ti have this loop.
+\par
+The longest time however goes because while we have single man, we go through their list of proposals. If the woman is in a relationship, we have to go through her list of proposlas int he worst case.
+
+\end{document}

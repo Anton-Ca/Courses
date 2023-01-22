@@ -1,0 +1,64 @@
+Tidskomplexitet T(n):
+
+Standardiserat sätt att jämföra tidsåtgången och effektiviteten för olika algoritmer.
+Även olika datastrukturer kan vara olika snabba. 
+
+Konstant tid innebär att tidsåtgången (tidskomplexiteten T(n)) ej ökar med ökat antal n. 
+
+Låg tidskomplexitet = Effektiv (snabb)
+Hög tidskomplexitet = Ej effektiv (långsam)
+
+Olika sorteringsalternativ är bra i olika situationer
+
+För varje loop (i ex. for loop) kan vi tänka att vi får en extra faktor n i tidskomplexiteten. 
+
+Verklig exekveringstid t(n) = c * T(n), där c är en konstant ex. för hur snabb datorn är etc. 
+
+Räkna alltid på värsta fallet när man räknar ut tidskomplexiteten. T(n) kan då uttryckas W(n) istället. 
+
+
+
+
+The big O (ordo) 
+
+T(n) = O(utryck i n) 
+
+Då kollar vi endast för stora n och kan ta bort alla termer utom den dominerande. Eventuella konstanter framför ordo kan också strykas och får ingå i vår verkliga konstant c istället. 
+
+T(n) = 2n^2 - n/2 + 1000.0000.000
+=>
+O(n) ≈ n^2 
+
+=> t(n) = c * n^2  
+
+
+Ex. Om n = 100 tar 10 ms att exekvera, hur lång tid blir det för n = 1000 om vi har O(n^2). 
+Svar: Vi får en faktor (100)^2 som multipliceras med det gamla resultatet, alltså 
+
+F(n) namn
+1 	=	konstant
+log(n) 	=	logaritmisk
+n 	=	linjär
+nlog(n) =	log-linjär (snabb sortering
+n^2 	= 	kvadratisk
+n^3 	= 	kubisk
+2^n 	= 	exponentiell
+
+
+W(n) = Worst case scenario
+A(n) Average time (medeltiden)
+
+
+Om sorteringen sker innanför en annan loop multipliceras ordon, men om de sker oberoende av varandra, adderas de. 
+
+
+for (int i : list) använder en for-each loop för att kontrollera listan. 
+
+
+Vad vi ska kunna: 
+Skillnad mellan T(n) och O(n) 
+Räkna ut tidskomplexiteten 
+Jämföra olika metoder och bestämma vilken som är effektivast. 
+Kunna välja vilken som passar bäst för situationen.
+
+

@@ -1,0 +1,100 @@
+Idag:
+ Repetition
+ Vanliga misstag på tentor
+
+
+
+Viktiga områden som vi gått igenom:
+
+Rekursion
+Abstrakta datatyper (lista, stack, kö, prioritetskö, mängd, map)
+	- Hashmap snabbare, men Treemap ger nycklar i ordning efter iterering
+Tidskomplexitet
+Interface
+Generiska klasser och metoder
+Sortering (pseudokodsnivå)
+Skuggning (metod från superklass) & Överlagring (samma namn på metoder)
+Exceptions
+Länkade strukturer
+(Grafiska användargränssnitt) - examineras ej under tentan 
+Autoboxing & Unboxing
+Skillnad på sökträd och binärt träd
+
+Kan vara värt att skriva snabbrättning på tentan (skicka mail och säg att jag läser en kurs som har behörighetskrav).
+
+
+Man behöver inte upprepa kommentarer eller kod från tidigare uppgift, bara markera var det ska klistras in.
+Ska kunna generera och fånga exception (throws, try catch).
+Privata metoder får vi lägga till hur mycket vi vill.
+
+
+Tenta delas ut. Uppgift hitta och rätta felen! 
+
+1)
+public class LinkedPolynom {
+	private Node first;
+
+	public LinkedPolynom(){
+		first = null;
+	}
+
+	public int getCoefficient(int exp) {
+		if (exp < 0) {
+			throw new IllegalArgumentException();
+		}
+		Node n = first;
+		while (n != null) { 				// n.next genererar out of bounds exception
+			if (n.exp == exp) {
+				return n.coeff; 		//int metod, så ett heltal ska returneras, inte en nod. 
+			}
+			n = n.next; 
+		}
+	return 0;			 // Vi måste returnera någonting (ej void) och i uppgiften ville de ha 0 i detta fallet.
+	} 
+}
+
+
+2)
+public class MapPolynomial {
+	private<Integer, Integer> Map polynomial; 		// Måste ha typargument 
+
+	public MapPolynomial() {
+		polynomial = new HashMap<>(); 			// Map är ett interface och man måste välja någon Hash, eller Tree eller liknande
+	}	
+	
+	public int getCoefficient(int exp) {
+		if (exp < 0) {
+			throw new IllegalArgumentException();
+		}
+		if (polynomial.containsKey(exp)) {   		// Nullpointer exception om polynomial tom. Vi får inte returnera null.
+			return polynomial.get(exp);
+		} else {
+			return 0;
+		}
+	}
+
+}
+
+
+3)
+public boolean isEqual(BinaryTree<E> other) {
+	return isEqual(root, other.root);
+}
+
+public boolean isEqual(Node<E> n1, Node<E> n2) { 
+	if (n1 == null && n2 == null) {
+		return true;
+	} 
+	
+	if (n1 == null || n2 == null) {			// Måste ta hand om fallet där enbart ett träd är null.
+		return false;
+	}
+
+	if (!n1.data.equals(n2.data)) { 					// equals när man har en okänd typ E
+		return false;
+	} 
+
+	return isEqual(n1.left, n2.left) && isEqual(n1.right, n2.right); 		//Måste returnera något
+}
+
+

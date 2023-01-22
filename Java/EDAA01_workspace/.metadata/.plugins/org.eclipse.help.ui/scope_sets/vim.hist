@@ -1,0 +1,4 @@
+#Thu Feb 06 17:00:19 CET 2020
+__DEFAULT__=false
+org.eclipse.help.ui.localSearch.master=true
+expression=vim

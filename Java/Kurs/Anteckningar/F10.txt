@@ -1,0 +1,59 @@
+Idag: 
+ Binära Sökträd
+ Hashtabeller
+
+
+Binära sökträd 
+
+Allt till vänster om roten är mindre än roten och allt till höger är större. 
+Får ej förekomma dubletter.
+Jämförelse med roten och sedan beslut om vi ska åt höger eller vänster. 
+När en nod tas bort måste man se till att referensen till denna för en tidigare nod är null. 
+För att ta bort en förälder, måste man hitta noden och ersätta den med den nederst vänstra noden för det högra barnet.
+
+Inga tentauppgifter kommer i form av att skriva kod för att ta bort ett jobbigt element i ett sökträd. 
+
+
+
+Skriv en metod som hittar en viss nod: 
+
+Basfall: tomt n == null return null;
+Annars:
+	Om x lika med n.data
+		return n.data;
+	Annars om x mindre än n.data
+		sök till vänster 
+		return find(n.left,x);
+	Annars 
+		sök till höger return find(n.right,x);
+
+Använd gärna den skuggade equals metoden samt en egen compareTo metod när vi har okänt objekt. 
+
+
+Generisk <E>
+<E extends Comparable<E>> talar vi om för kompilatorn att det är okej att använda comparable metoder som compareTo(E) för objektet E. 
+
+
+
+
+Tidskomplexitet för binära sökträd: 
+
+
+Sökning: O(N) 
+i värsta fall (träd med bara en lång kedja, lista), men O(log N) i medelfall
+
+T(n) = O(h) där h = höjd
+		n = antal noder
+då är log(n+1) ≤ h ≤ n
+
+Insättning & borttagning:
+
+Samma som för sökning. 
+
+
+
+Balanserat träd 
+Höjdskillnaden mellan två subträd för en förälder får högst vara 1.
+Balansera ett träd, rotera ner den obalanserade noden. 
+
+  

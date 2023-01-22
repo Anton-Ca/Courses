@@ -1,0 +1,97 @@
+Idag: Jämföra objekt
+ Metoden equals
+ Interfacen Comparable, Comparator
+ Lambdauttryck
+ Exception
+    generera
+    fånga
+ Något om kommentarer, javadoc
+ Något om testning jUnit
+
+
+Skugga = implementera en ny funktion med samma namn.
+
+
+p1 = new...
+p2 = new... (samma) 
+
+p1 == p2   => false
+
+p3 = new... 
+p3 = p1 
+
+p1 == p3   => true
+
+
+Typecast: 
+
+Om id är en metod som finns i Person, kan denna inte användas direkt på ett objekt, utan man måste först definiera att objektet är av typen person.
+
+Istället för:
+
+id = obj.id;
+
+Måste man använda: 
+
+id = ((Person obj).id);
+
+
+För att undvika exception:
+
+if(obj instanceof Persson {
+	...
+} else {
+	return false;
+}
+
+
+I exemplet ovan går det även att mata in en subklass till Person.
+
+Jämföra värden använd == 
+Jämföra objekt, använd equals metod 
+
+
+I sort metoden finns compareTo som används för att bestämma hur man jämför objekten.  
+p1.compareTo(p2);
+returnerar negativt, 0 eller positivt
+negativt om: p1 < p2
+0 om: p1 == p2
+positivt om p1 > p2
+
+public int compareTo(Person P) {
+ return id - P.id;
+} 
+
+Sorterar nu efter personernas id. 
+
+
+Istället för att skriva om små klasser för nya metoder kan man använda Lambdauttryck:
+
+Arrays.sort(persons, (p1,p2) -> 
+p1.getName().compareTo(p2.getName());
+...
+
+I listan persons jämför den två objekt p1 och p2 och utför metoden efter ->. Detta gör den linjärt för alla element i listan. Lambdauttryck fungerar bäst när det endast finns en metod i klassen/interfacet. Metoderna i Lambdauttrycket baseras på vad vi har för typ i vår vektor. 
+
+Lambdauttryck skrivs på formen:
+
+(parametrar) -> metoder 
++ någon sorts return; ? 
+
+
+Exception:
+
+if (..) {
+	throw new IllegalArgumentException("Förklarande sträng"); 
+}
+
+
+När man sedan använder programmet
+
+try {
+
+} catch (exception classen (från ovan IllegalArgumentException e) {
+	System.out.println(e.getMessage()); 
+}
+
+ 

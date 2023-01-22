@@ -1,0 +1,43 @@
+Idag: 
+ Rekursion
+	Söndra och Härska -algoritmer
+	Backtracking
+
+För att få använda en lokal variabel i en annan metod i samma klass måste den skicka med som parameter. 
+
+Vissa av de exempel vi sett kan lika enkelt lösas icke-rekursivt.
+Ex: beräkning av n!
+
+Ibland leder rekursion till väldigt ineffektiva algoritmer.
+Ex: fibonaccitalen (om man inte tänker sig för)
+
+Rekursion bör användas när det är svårt att uttrycka lösningen icke-rekursivt.
+Ex: algoritmer som manipulerar datastrukturer som träd och grafer.
+
+Det finns en icke-rekursiv lösning, men den rekursiva är effektivare.
+Ex: sortering
+Ex: behandla elementen i en lista i omvänd ordning (med nästlade
+loopar)
+
+Det finns icke-rekursiv lösning och en lika effektiv rekursiv lösning
+som är enklare (att förstå, implementera . . . ).
+Ex: binärsökning
+
+
+Backtracking:
+
+Pseudokod för allmän backtracking som kontrollerar om det finns minst en
+lösning:
+
+boolean solve(v)
+	if v is a solution
+		return true
+	for each promising choice c
+			make choice c
+		if (solve(v with c))
+			return true
+		unmake choice c
+
+return false
+
+

@@ -1,0 +1,26 @@
+Vanlig loop:
+
+public void print () {
+
+	ListElement<E> p = first;
+	while (p != null) {
+		System.out.println(p.element);
+		p = p.next;
+	}
+
+}
+
+Antag att ListElement, first och p.next är tillåtet. p kommer då att stegra genom listan och till slut få värdet null, då listan är slut. 
+
+
+LinkedList är en subclass till List på liknande vis som Arraylist.
+Skillnader Arraylist = vektorlista och LinkedList är en dubbellänkad lista.
+LinkedList har fler metoder än ArrayList. 
+
+ArrayList bra för: get(i), addLast(obj)
+LinkedList bra för: addFirst(obj), addLast(obj)
+
+LinkedList söker från någon av ändarna (First / Last) och stegar igenom.
+ArrayList kan direkt ta fram ett element på plats i, men måste därefter stega igenom och se till att listan inte har några luckor.
+
+Gör övningar för länkad list, vad betyder det ens?   

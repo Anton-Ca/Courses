@@ -1,0 +1,55 @@
+@startuml
+
+' uncomment the line below if you're using computer with a retina display
+' skinparam dpi 300
+!define Table(name) class name << (T,#FFAAAA) >>
+' we use bold for primary key
+' green color for unique
+' and underscore for not_null
+!define primary_key(x) <b>x</b>
+!define unique(x) <color:green>x</color>
+!define not_null(x) <u>x</u>
+!define foreign_key(x) <i>x</i>
+' other tags available:
+' <i></i>
+' <back:COLOR></color>, where color is a color name or html color code
+' (#FFAACC)
+' see: http://plantuml.com/classes.html#More
+hide methods
+hide stereotypes
+
+' entities
+
+
+Table(theater) {
+	primary_key(name) TEXT
+	capacity INTEGER
+}
+
+Table(screening) {
+	start_time INTEGER
+}
+
+Table(user) {
+	primary_key(username) TEXT
+	name TEXT
+	password TEXT
+}
+
+Table(movie) {
+	primary_key(imdb-key) TEXT
+	title TEXT
+	duration INTEGER
+}
+
+Table(ticket) {
+	primary_key(ticket-id) TEXT
+}
+
+ticket "*" -- "1" screening
+ticket "*" -- "1" user
+
+screening "*" -- "1" movie
+screening "*" -- "1" theater
+
+@enduml

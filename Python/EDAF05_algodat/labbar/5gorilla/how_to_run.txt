@@ -1,0 +1,10 @@
+# Kör fil med argument
+python3 solution.py data/sample/1.in
+# Check solution
+./check_solution.sh python3 solution.py data/sample/1.in    # ?? dunkar ej
+
+# Därav testar vi med stdin istället
+# Kör fil med sys.stdin
+python3 solution.py < data/sample/1.in
+# Check solution
+./check_solution.sh python3 solution.py    # ???

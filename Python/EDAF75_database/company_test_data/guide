@@ -1,0 +1,6 @@
+sqlite3 <filnamn>.db    (alt. .sqlite) 
+öppnar upp sqlite3 med databasen inläst
+
+.open funkar även för att läsa in databser i sqlite3 miljön
+
+.read <filnamn> kör koden i filen som en query 

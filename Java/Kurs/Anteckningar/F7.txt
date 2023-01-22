@@ -1,0 +1,42 @@
+Idag: 
+ Binärsökning
+ Rekursion
+
+Ex. Rekursion, faklutet ! 
+
+public static long factorial(int n) {
+	if(n==0){
+		return1;
+	} else {
+		return n * factorial(n-1);
+	}
+}
+
+Om n = 3 får vi alltså: 
+3 * 2!  =  3 * 2 * 1!  =  3 * 2 * 1 * 0!  =  3 * 2 * 1 * 1
+
+
+
+Ex. Skapa en upphöt till funktion:
+public static long pow(double i, int n) {
+
+	if (n == 0) {
+		return 1;
+	} else {
+		return i * pow(i, n-1)
+	}
+}
+
+
+Strategi med rekursion: 
+Hitta ett basfall som är superenkelt att lösa. Utveckla därefter modellen efter hand för att kunna lösa problemet. 
+
+
+
+Binärsökning 
+
+Gissa på talet mitt i intervallet tills man gissar rätt. 
+Tidskomplexitet O(log(N))
+
+Fråga: Vilken bas har logaritmen i ordo-angivelser ex. binärsökning? 
+Svar: Andra logaritmen 2log(N)

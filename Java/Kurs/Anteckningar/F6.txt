@@ -1,0 +1,16 @@
+Idag: 
+ Användargränssnitt
+ Lambdauttryck 
+
+Inget om grafiska användargränssnitt dyker upp på tentan, men lambdauttryck kan dyka upp.
+
+
+Lab2: 
+Använd append för att slå ihop 2 köer och ingen loop.
+Man får inte append:a en lista med sig själv. 
+
+JavaFX är nu utbytt mot Swing istället.
+
+Mycket duplicering av kod? Gör en klass med det som kan kopieras istället, relevant för labb 4?
+
+ 

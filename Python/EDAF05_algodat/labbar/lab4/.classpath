@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="src/lab4/data/sample/1.ans"/>
+	<classpathentry kind="lib" path="src/lab4/data/sample/1.in"/>
+	<classpathentry kind="lib" path="src/lab4/data/sample/2.ans"/>
+	<classpathentry kind="lib" path="src/lab4/data/sample/2.in"/>
+	<classpathentry kind="lib" path="src/lab4/data/secret/0mini.ans"/>
+	<classpathentry kind="lib" path="src/lab4/data/secret/0mini.in"/>
+	<classpathentry kind="lib" path="src/lab4/data/secret/1small.ans"/>
+	<classpathentry kind="lib" path="src/lab4/data/secret/1small.in"/>
+	<classpathentry kind="lib" path="src/lab4/data/secret/2med.ans"/>
+	<classpathentry kind="lib" path="src/lab4/data/secret/2med.in"/>
+	<classpathentry kind="lib" path="src/lab4/data/secret/3large.ans"/>
+	<classpathentry kind="lib" path="src/lab4/data/secret/3large.in"/>
+	<classpathentry kind="lib" path="src/lab4/data/secret/4larger.ans"/>
+	<classpathentry kind="lib" path="src/lab4/data/secret/4larger.in"/>
+	<classpathentry kind="lib" path="src/lab4/data/secret/5huge.ans"/>
+	<classpathentry kind="lib" path="src/lab4/data/secret/5huge.in"/>
+	<classpathentry kind="lib" path="src/lab4/data/secret/6huger.ans"/>
+	<classpathentry kind="lib" path="src/lab4/data/secret/6huger.in"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

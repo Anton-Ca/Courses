@@ -1,0 +1,55 @@
+Idag:
+ Sortering
+
+Repetera Unboxing vs Autoboxing
+
+
+Urvalssortering:
+
+Hitta minsta talet 
+Byta plats på det första och minsta elementet så det minsta hamnar först.
+
+O(n^2)
+
+
+
+Insättningssortering 
+
+Sätter in elementen först
+Jämför med elementet efter och butar plats om det vi vill sätta in är större
+Snabb om listan redan är sorterad / nästan sorterad. O(n) 
+
+O(n^2)
+
+
+
+Mergesort:
+
+Sortera vänster och höger halvor separat 
+sortera därefter de båda sorterade halvorna.
+
+Utför en binärsökning och dela upp listan i två halvor.
+Fortsätt på liknande vis med rekursion.
+Skapa en tredje resultatslista och sortera in talen från halvorna i rätt ordning. Jämför de främsta elementen och sortera in det minsta tills båda halvorna är tomma.  
+
+Nackdel: Man behöver en extra vektor och dubbelt så mycket minne som den ursprungliga vektorn.
+
+O(nlog(n))
+
+
+
+Quicksort: 
+
+Väljer ett element i vektorn X (gärna nära mitten) och ser till att alla mindre element hamnar till vänster och alla större åt höger. 
+Sorterar vektorn med partitionering se föreläsningsslide.
+Man vill ha ungefär lika stora halvor om pivotelementet för att få en snabb algoritm. 
+Detta undviker man genom att välja pivotelementet som medianen av första, sista och mellersta elementet. 
+
+
+
+Det vi ska kunna om sorteringsalgoritmer är att kunna:
+	Principerna
+	Förklara pivot-element & partitionering
+	Kunna välja rätt 
+	Kunna skriva pseudo-kod som förklarar algoritmen 
+

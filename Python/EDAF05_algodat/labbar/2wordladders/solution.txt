@@ -1,0 +1,5 @@
+3 Requirements för en korrekt lösning:
+
+1) De fyra sista siffrorna i första ordet (O1) måste förekomma på något vis i ord 2 (O2).
+2) Om en bokstav förekommer n > 1 gånger i de sista fyra på O1, måste det finnas samma antal av samma bokstav i O2.
+3) Om 1) och 2) är uppfylda kan vi rita en arc mellan orden och om vi kan nå till O2 genom att gå från O(1) till k andra ord i filen och slutligen hamna på O(2), så får outputfilen svaret k+1. Om det inte går får vi "impossible". 

@@ -1,0 +1,73 @@
+idag:
+
+- Abstrakta datatyper
+- Javas klassbibliotek för samlingar av element
+- Generiska klasser
+- Iterera genom en samling av objekt
+- Kanske: jämföra objekt 
+
+Abstrakt innebär att man gömmer det som inte är viktigt ex. klassen String är abstrakt. 
+
+Abstrakt datatyp (ADT) = En abstrakt modell + de operationer man kan utföra på den. 
+
+Viktiga abstrakta datatyper - se förel slides 
+
+Prioritetskö - minsta objektet = viktigaste 
+
+Map<K, V>
+HashMap<K, V>
+Map - Innehåller nyckel K med tillhörande värde V. Nycklar unika, värden dubletter. Skriv in en nyckel och få ett värde returnerat.
+Ex. Räkna förekomster av ord - Map nyckel är ordet och värdet är antalet förekomster. (Gör ej onödiga loopar, finns inbygda metoder i map)
+
+Kontrollerade att paranteser är korrekt nästlade - Stack 
+
+Generiskt inteface - Vill kunna hantera objects av olika typer 
+Konvention en stor bokstav inom klamrar enligt: <T>
+Ex. List<String> - Talar om att objekten är av typen sträng och inga nadra objekt kan läggas in.
+
+Ex.
+add(T x) - Fungerar enbart för T objekt, när typen T bestämts
+remove(Object x) - Fungerar även om objektet inte är av typen T
+
+int - Lägger värdet direkt på minnesplatsen i datorn
+Integer - Lägger en referens till ett annat objekt på minnesplatsen. Lägger minnescells numret för en annan cell på minnesplatsen.
+
+Skissa minnes diagram:
+Ruta = minnescell
+Pil = referens
+Cirkel = objekt 
+
+Integer A = B; - Kopierar referenspilen från cellen B till cellen A. 
+
+int A;
+Integer B = 42; - Autoboxing (tillåtet) 
+A = B; - Unboxing (tillåtet) 
+
+Man får inte skapa en new T[] utan då skriver man: data = (E[])new Object[10];
+
+
+Iterering: 
+
+Ex. Summera alla tal i en lista
+
+int sum;
+for (int i = 0; i < list.size(); i++) {
+	sum += list.get(i);
+}
+
+OBS! Ovan funkar endast för ArrayLists. Bättre resultat får man kortare med:
+
+int sum2;
+for (int n : list){
+	sum2 += n;
+}
+
+Samma resultat får man av följande kod med en iterator:
+
+int sum1 = 0;
+Iterator<Integer> itr = list.iterator();
+while (itr.hasNext()) {
+	sum1 += itr.next();
+}
+
+

@@ -1,0 +1,18 @@
+package lab6;
+import lab6.run;
+import java.util.*;
+
+public class solution {
+	public solution(ArrayList<Integer> points) {
+		
+		//long a = System.currentTimeMillis();
+		//System.out.printf(solve());
+		//long b = System.currentTimeMillis();
+		//System.out.println("TIME TO EXECUTE ALGORITHM: " + (b - a) + "\n");
+	}
+
+	public void solve(run.DataTuple dataTuple) {
+
+	}
+	
+}

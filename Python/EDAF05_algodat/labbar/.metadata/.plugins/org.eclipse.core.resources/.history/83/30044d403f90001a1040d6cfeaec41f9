@@ -1,0 +1,178 @@
+import java.util.*;
+import java.util.TreeMap;
+import java.util.Comparator;
+
+public class solution {
+
+	private HashMap<String, Integer> dataPairs;
+	private ArrayList<ArrayList<Integer>> nodes;
+	private static HashMap<String, Integer> dataPairsNode;
+	private static ArrayList<Integer> nodeFrom;
+	private static ArrayList<Integer> nodeTo;
+	private static ArrayList<Integer> edges;
+
+	public solution(HashMap<String, Integer> dataPairs, ArrayList<ArrayList<Integer>> nodes, ArrayList<Integer> nodeFrom, ArrayList<Integer> nodeTo, ArrayList<Integer> edges) {
+		this.dataPairs = dataPairs;
+		this.nodes = nodes;
+		dataPairsNode = dataPairs;
+		this.edges = edges;
+
+		long a = System.currentTimeMillis();
+		ArrayList<Node> graph = createGraph();
+		long b = System.currentTimeMillis();
+
+		// System.out.println("TIME TO CRETE GRAPH: " + (b - a) + "\n");
+
+		// a = System.currentTimeMillis();
+		// HashMap<Integer, Integer> MST = prim(graph);
+		// System.out.println(prim(graph));
+		// b = System.currentTimeMillis();
+
+		//	int answer = recTime(MST);	
+		//	System.out.println(answer);
+		a = System.currentTimeMillis();
+		System.out.println(prim(graph));
+		b = System.currentTimeMillis();
+		// System.out.println("TIME TO EXECUTE ALGORITHM: " + (b - a) + "\n");
+
+	}
+
+	@SuppressWarnings("unchecked")
+	private ArrayList<Node> createGraph() {
+		// Vi behöver ha någon sorts datastruktur som håller koll på kanterna och som vi
+		// sedan kan jämföra två objekt med Comparator nedan. Vi vill alltså jämföra
+		// kanterna sinsemellan och plocka ut den med minst avstånd (kant a - kant b)
+		// och det är inte noderna som vi ska sortera.
+		ArrayList<Integer> nodeList;
+		ArrayList<Node> referenceList = new ArrayList<>(nodes.size());
+		//ArrayList<Integer> edgeLsit; 
+		//PriorityQueue<Node> graph = new PriorityQueue<>(nodes.size(), Comparator.comparingInt(e -> e.index));
+		// PriorityQueue<Node> graph = new PriorityQueue<>(nodes.size(), ((n1, n2) ->
+		// ((Comparable<Integer>
+		// )Integer.valueOf(dataPairs.get(n1))).compareTo(Integer.valueOf(dataPairs.get(n2)))));
+		 //PriorityQueue<Node> graph = new PriorityQueue<>(nodes.size(),Comparator.comparingInt(n -> n.d));
+
+		// Create all nodes (all references)
+		for (int i = 1; i < nodes.size(); i++)
+			referenceList.add(new Node(i));
+
+		// Set distance and references in neighbour HashMap
+		for (int j = 0; j < referenceList.size(); j++) {
+			Node n = referenceList.get(j);
+
+			if (j == 0)
+				n.d = 0;
+
+			for (int k = 0; k < (nodeList = nodes.get((n.index))).size(); k++)
+				n.neighbours.put(nodeList.get(k), referenceList.get(nodeList.get(k) - 1));
+
+			//graph.add(n);
+		}
+		return referenceList;
+	}
+
+	private int prim(ArrayList<Node> graph) {
+
+		PriorityQueue<Tuple> pool = new PriorityQueue<>(Comparator.comparingInt(e -> e.weight));
+		pool.offer(new Tuple(graph.get(0), 0));
+		HashSet<Node> visited = new HashSet<>();
+
+		int counter = 0;
+		// System.out.println(Arrays.toString(pool.toArray()));
+
+		while (pool.size() > 0) {
+			Tuple u = pool.poll();
+
+			if (visited.contains(u))
+				continue;
+
+			counter += u.weight;
+			visited.add(u.from);
+			// Uppdaterar avstånd från den utplockade noden u till alla grannar v
+			for (Node v : u.from.neighbours.values()) {
+				//System.out.println("FROM " + u.from.index + " TO " + v.index + " | NEIGHBOURS TO " + u.from.index + ": "
+				//		+ u.from.neighbours.keySet());
+				Tuple T = new Tuple(v, u.from.getWeight(v));
+				pool.offer(T);
+				
+			//graph.remove(v);
+				// u.neighbours.keySet());
+				// v.d = u.d + u.getWeight(v);
+				// v.p = u;
+			//Node duplicateNode = new Node(v.index);
+		//	duplicateNode.d = u.getWeight(v);
+		//	duplicateNode.neighbours = v.neighbours;
+		//	duplicateNode.dataPairs = v.dataPairs;
+		//	graph.offer(duplicateNode);
+
+			}
+		}
+		return counter;
+
+	}
+
+	private static class Node {
+
+		int index;
+		int d = Integer.MAX_VALUE;
+		boolean visited = false;
+		Node p;
+
+		HashMap<Integer, Node> neighbours = new HashMap<>();
+		HashMap<String, Integer> dataPairs = dataPairsNode;
+
+		public Node(int index) {
+			this.index = index;
+		}
+
+		int getWeight(Node n) {
+
+			String searchKeyOne = this.index + Integer.toString(n.index);
+			String searchKeyTwo = n.index + Integer.toString(this.index);
+
+			if (dataPairs.get(searchKeyOne) == null) {
+				return dataPairs.get(searchKeyTwo);
+			} else {
+				return dataPairs.get(searchKeyOne);
+			}
+		}
+
+		@Override
+		public String toString() {
+			return " " + index + ".d = " + d + " ";
+		}
+	}
+	private static class Edge {
+
+		int index;
+		Node from;
+		Node to;
+
+		HashMap<String, Integer> dataPairs = dataPairsNode;
+
+		public Edge(Node n1, Node n2) {
+			this.from = n1;
+			this.to = n2;
+			index = n1.getWeight(n2);
+		}
+
+		@Override
+		public String toString() {
+			return "Edge = " + index + " | Node 1 = " + from.index + " | Node 2 = " + to.index;
+		}
+	}
+	
+	private static class Tuple {
+		Node from;
+		int weight;
+		
+		public Tuple(Node from, int weight) {
+			this.from = from;
+			this.weight = weight;
+		}
+		
+		
+	}
+	
+	
+}

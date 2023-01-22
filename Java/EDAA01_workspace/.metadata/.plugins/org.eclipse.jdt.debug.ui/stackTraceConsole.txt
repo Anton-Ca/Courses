@@ -1,0 +1,25 @@
+       /**
+        * Test ordering of offer followed by adding two identical queues together.
+        */
+        @Test
+        public final void testAppendSame() {
+                int nbr = 3;
+                for (int i = 0; i < 3; i++){
+                        myIntQueue.offer(i);
+                }
+                Iterator<Integer> itr = myIntQueue.iterator();
+
+                assertTrue("Wrong result from hasNext()", itr.hasNext());
+                for (int i = 1; i <= nbr; i++) {
+                         assertEquals("Wrong result from itr.next", Integer.valueOf(i), itr.next());
+                 }
+
+                try {
+                        myIntQueue.append(myIntQueue);
+                        fail("Should raise IllegalArgumentException");
+                } catch (IllegalArgumentException e){
+                        // Successful test
+                }
+
+        }
+}

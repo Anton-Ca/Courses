@@ -1,0 +1,29 @@
+package lab6;
+import lab6.NetworkFlowSolver.Edge;
+import lab6.run.DataTuple;
+
+import java.util.*;
+
+public class solution {
+	public solution(DataTuple data) {
+		
+		//long a = System.currentTimeMillis();
+		//System.out.printf(solve());
+		//long b = System.currentTimeMillis();
+		//System.out.println("TIME TO EXECUTE ALGORITHM: " + (b - a) + "\n");
+	}
+
+	public void solve(DataTuple dataTuple) {
+	    int n = dataTuple.nbrNodes-1;
+	    int s = n - 2;
+	    int t = n - 1;
+	    
+	    ArrayList<Edge> edges = new ArrayList<>();
+	    
+	    for (int i = 0; i < dataTuple.nbrEdges; i++) {
+	    	
+	    }
+	    
+	}
+	
+}

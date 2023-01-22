@@ -1,0 +1,75 @@
+/**
+ * 
+ */
+package bst;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Comparator;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+/**
+ * @author AntonCarlsson
+ *
+ */
+class TestBTree {
+	Comparator<String> comps;
+	Comparator<Integer> compi;
+	BinarySearchTree<String> str;
+	BinarySearchTree<Integer> nbr;
+	
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	void setUp() throws Exception {
+		str = new BinarySearchTree<String>();
+		nbr = new BinarySearchTree<Integer>(compi);
+	}
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@After
+	void tearDown() throws Exception {
+		comps = null;
+		compi = null;
+		str = null;
+		nbr = null;
+	}
+	
+	/**
+	 * Kontrollerar size för tomma BinarySearchTrees.
+	 */
+	@Test
+	void testEmpty() {
+		assertFalse("Fel värde för ett tomt träd", str.size() != 0);
+		assertFalse("Fel värde för ett tomt träd", nbr.size() != 0);
+	}
+	
+	/**
+	 * Kontrollerar size för add BinarySearchTrees och att size uppdateras korrekt.
+	 */
+	@Test
+	void testAdd() {
+		str.add("boi");
+		nbr.add(69);
+		assertFalse("Fel värde för trädet", str.size() != 1);
+		assertFalse("Fel värde för trädet", nbr.size() != 1);
+		str.add("lit");
+		nbr.add(420);
+		assertFalse("Fel värde för trädet", str.size() != 2);
+		assertFalse("Fel värde för trädet", nbr.size() != 2);
+		assertEquals();
+	}
+	
+	
+
+}

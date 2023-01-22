@@ -1,0 +1,73 @@
+Idag:
+ Giriga algoritmer
+ Djikstras algoritm
+ 
+
+
+Giriga algoritmer
+
+Gissar en lösning med lokal information, som förhoppningsvis blir den bästa globala lösningen med. 
+
+
+Djikstras algoritm:
+
+Försöker gissa den kortaste vägen från startnoden, genom att stegra sig en nod åt gången och uppdatera shortest path om den hittar en kortare väg till en annan väg. 
+
+Pseudokod:
+
+Startnoden får vikt = 0 
+Alla andra noder får vikten = ∞
+
+While noder ej är besökta
+	Besök nuvarande nod som har minsta avståndet till start 
+	for varje obesökt granne till nuvarande nod
+		Räkna ut avståndet till startnoden 
+		if det utträknade avståndet till nuvarande noden är mindre än det minst kända avståndet 
+			Uppdatera minsta avståndet till nuvarande noden
+			Uppdatera den tidigare besökta noden till den nuvarande
+		next obesökta granne
+		Lägg till den nuvarande noden till listan av besökta noder
+
+
+
+Prims algorithm 
+
+algoritm  PRIM
+indata:   graf, en sammanhängande, viktad och oriktad graf
+          rot,  ett hörn i graf
+resultat: Varje hörn i graf märks med sin förälder i ett minimalt
+          uppspännande träd av graf med det angivna hörnet som rot
+          samt med vikten av kanten till föräldern.
+
+for varje hörn i graf
+    hörn.vikt     ← ∞
+    hörn.förälder ← ogiltig
+
+rot.vikt ← 0
+kö ← en prioritetskö bestående av alla hörn i graf,
+     med minsta vikt som prioriteringsvärde
+
+while kö inte är tom
+    u ← extrahera_minsta( kö )
+    for varje hörn v som u ansluter till via en kant (u, v)
+        if v finns i kö och vikten av kanten (u, v) < v.vikt
+            v.förälder ← u
+            v.vikt ← vikten av kanten (u, v)
+
+
+
+Kruskals algoritm
+
+procedure kruskal(G, w)
+
+Input: A connected undirected graph G = (V, E) with edge weights we
+Output: A minimum spanning tree defined by the edges X
+
+for all u ∈ V :
+	makeset(u)
+X = {}
+Sort the edges E by weight
+for all edges {u, v} ∈ E, in increasing order of weight:
+	if find(u) ≠ find(v):
+		add edge {u, v} to X
+		union(u, v)

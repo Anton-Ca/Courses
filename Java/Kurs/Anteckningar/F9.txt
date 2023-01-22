@@ -1,0 +1,52 @@
+Idag:
+ Binära sökträd
+	- träd
+	- binära träd
+	- hashtabeller 
+
+Träd:
+
+Kan ha flera efterföljare (och flera företrädare?) 
+Består ofta av rekursiva metoder. 
+Noder som ej har subträd kallas för löv. 
+Ju högre trädet är desto fler nivåer (djup) finns det. 
+
+
+Binära Träd: 
+
+0, 1 eller 2 barn för varje nod. 
+
+Preorder: Root, Left, Right
+Inorder: Left, Root, Right
+Postorder: Left, Right, Root    (fast i omvänd postorder) 
+
+Det som ändras mellan de olika är att System.out.println(""); raden flyttas innan eller efter .left, och .right 
+I exemplet på föreläsningen Binära Träd:
+Preorder: M H A K S N T 
+In-order: A H K M N S T 
+Post-order: A K H N T S M 
+
+
+
+
+
+Hör ej till denna föreläsning:
+
+@Override = (Skuggning) Om man vill använda samma metod och parametrar för att använda en ny algoritm
+Överlagring = Om man vill använda samma metod med andra parametrar för att tilldela en ny algoritm 
+'\n' för ny rad
+ 
+
+private int size(Node<E> n){
+	if (n == null) {
+		return 0;
+	} else {
+		return 1 + size(n.left) + size(n.right);
+	}
+}
+
+Räknar ut storleken av ett träd. 
+
+
+
+

@@ -1,0 +1,124 @@
+import java.util.*;
+import java.text.DecimalFormat;
+
+public class solution4 {
+	public solution4(ArrayList<run4.Point> points) {
+
+		//long a = System.currentTimeMillis();
+		DecimalFormat df = new DecimalFormat("#.000000");
+		System.out.printf(java.util.Locale.US,"%7f\n", solve(points));
+		//long b = System.currentTimeMillis();
+		//System.out.println("TIME TO EXECUTE ALGORITHM: " + (b - a) + "\n");
+	}
+
+	public double solve(ArrayList<run4.Point> points) {
+		ArrayList<run4.Point> sortedXPoints = new ArrayList<>();
+		ArrayList<run4.Point> sortedYPoints = new ArrayList<>();
+		
+		for (int i = 0; i < points.size(); i++) {
+			sortedXPoints.add(points.get(i));
+			sortedYPoints.add(points.get(i));
+		}
+		
+		sortedXPoints.sort(Comparator.comparingInt(p -> p.x));
+		sortedYPoints.sort(Comparator.comparingInt(p -> p.y));
+		
+		return findClosestPair(sortedXPoints, sortedYPoints);
+	}
+	
+	public double findClosestPair(ArrayList<run4.Point> sortedXPoints, ArrayList<run4.Point> sortedYPoints) {
+		
+		// Brute force if less than or equal amount to 3 points (constant timeoperations) 
+		if (sortedXPoints.size() <= 30) 
+			return bruteForce(sortedXPoints);
+		
+		
+		int midIndex = sortedXPoints.size()/2;
+		run4.Point midPoint = sortedXPoints.get(sortedXPoints.size()/2);
+
+		// Divide into left and right sub-arrays 
+		ArrayList<run4.Point> leftSubY = new ArrayList<>();
+		ArrayList<run4.Point> leftSubXSorted = new ArrayList<>() ;
+		ArrayList<run4.Point> rightSubY = new ArrayList<>();
+		ArrayList<run4.Point> rightSubXSorted = new ArrayList<>() ;
+		boolean other = false;
+		
+		for (int i = 0; i < sortedYPoints.size(); i++) {
+
+			// Switches so that one strip doesn't get much larger than the other	
+			if((sortedYPoints.get(i).x == midPoint.x))
+				other = (! other);
+
+			if(sortedYPoints.get(i).x < midPoint.x || ((sortedYPoints.get(i).x == midPoint.x) && (other == false))) {
+				leftSubY.add(sortedYPoints.get(i));
+			} else {
+				rightSubY.add(sortedYPoints.get(i));
+			}
+		}
+		
+		other = false; 
+		
+		for (int i = 0; i < sortedXPoints.size(); i++) {
+
+			if((sortedXPoints.get(i).x == midPoint.x))
+				other = (! other);
+
+			if(sortedXPoints.get(i).x < midPoint.x || ((sortedXPoints.get(i).x == midPoint.x) && (other == false))) {
+				leftSubXSorted.add(sortedXPoints.get(i));
+			} else {
+				rightSubXSorted.add(sortedXPoints.get(i));
+			}
+		}
+		
+		// Recursive search
+		double dLeft = findClosestPair(leftSubXSorted, leftSubY);
+		double dRight = findClosestPair(rightSubXSorted, rightSubY);
+		double dBoth = Math.min(dLeft, dRight);
+		
+		ArrayList<run4.Point> pointsWithinStrip = new ArrayList<run4.Point>();
+		
+		// Find smallest distance in strip with width 2*dBoth
+		for (int i = 0; i < sortedYPoints.size(); i++) {
+			if (Math.abs(sortedYPoints.get(i).x - midPoint.x) < dBoth) {
+				pointsWithinStrip.add(sortedYPoints.get(i));
+			}
+		}
+		
+		double minDistStrip = findMinDistanceInStrip(pointsWithinStrip, dBoth);
+		
+		return Math.min(dBoth, minDistStrip);
+	}
+		
+	public double bruteForce(ArrayList<run4.Point> points) {
+		double minDistance = Integer.MAX_VALUE;
+		
+		for (int i = 0; i < points.size(); i++) {
+			for (int j = i + 1; j < points.size(); j++) {
+				if (distance(points.get(i), points.get(j)) < minDistance) {
+					minDistance = distance(points.get(i), points.get(j));
+				}
+			}
+		}
+		return minDistance;
+	}
+	
+	public double findMinDistanceInStrip(ArrayList<run4.Point> points, double minD) {
+		double minDistance = minD;
+		
+		for (int i = 0; i < points.size(); i++) {
+			for (int j = i + 1; j < points.size() && (points.get(j).y - points.get(i).y) < minD; j++) {
+				if (distance(points.get(i), points.get(j)) < minDistance) {
+					minDistance = distance(points.get(i), points.get(j));
+				}
+			}
+		}
+		return minDistance;
+	}
+	
+	public double distance(run4.Point p1, run4.Point p2) {
+		double diffX = Math.abs(p1.x - p2.x);
+		double diffY = Math.abs(p1.y - p2.y);
+		return (double) Math.sqrt(diffX*diffX + diffY*diffY); 
+	}
+	
+}

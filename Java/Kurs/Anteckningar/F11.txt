@@ -1,0 +1,27 @@
+Idag:
+ Hashtabeller
+
+Sluten Hashtabell:
+Om elementet inte finns på den sökta platsen kolla närmaste elementen till höger tills det kommer ett tomrum och renurnera i sådana fall att det sökta elementet inte finns. 
+
+(inte så bra, borttagning problem) 
+
+Öppen Hashtabell:
+Varje element består av en lista som innehåller de olika element som får samma hash-värde.
+
+(Bättre) 
+
+
+Minska kollisioner: 
+ - Bra hashfunktion
+ - Tillräckligt stor vektor 
+
+
+Hashtabell =/= HashMap
+
+
+Behöver inte kunna exakta metoder på tentan, utan mer kunna översiktligt vad den abstrakta datatypen är och kunna hitta metoden i tabellen som ges på tentan. 
+
+
+
+

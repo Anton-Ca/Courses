@@ -1,0 +1,21 @@
+Idag: 
+
+
+
+Girig Algoritm:
+
+Tar beslut utan att ha all information. 
+
+
+
+Dynamisk programmering:
+
+Hittar en optimal lösning, långsam men finns trick man kan göra.
+
+
+
+Amortized 
+Tar O(1) per operationer
+
+
+

@@ -1,0 +1,69 @@
+Idag:
+ Grafer
+ DFS
+ BFS
+
+
+/* ------------------------------ DFS ------------------------------ */
+
+n = number of nodes
+g = adjacency list of graph
+count = 0
+components = empty integer array
+visited = [false, ... , false]
+
+function findComponents():
+	for (i = 0; i < n; i++):
+		if (!visited[i]):
+			count++
+			dfs(i)
+	return (count, components)
+
+function dfs(at):
+	visited[at] = true 
+	components[at] = count 
+	for (next : g[at]):
+		if(!visited[next]):
+			dfs(next) 
+
+
+/* ------------------------------ BFS ------------------------------ */
+
+n = number of nodes
+g = adjacency list of graph
+
+prev = solve(s)
+return reconstructPath(s, e, prev)
+
+function solve(s):
+	q = stack with enqueue and dequeue methods
+	q.enqueue(s)
+
+	
+	visited = [false, ... , false]
+	visited[s] = true
+
+	prev = [null, ... , null]
+	
+	while(!q.isEmpty()):
+		node = q.dequeue()
+		neighbors = g.get(node)
+
+	for (next : neighbors):
+		if(!visited[next]):
+			q.enqueue(next)
+			visited[next] = true
+			prev[next] = node
+	return prev
+
+function reconstructPath():
+	path = []
+	for (at = e; at != null; at = prev[at])
+		path.add(at)
+
+	path.reverse()
+
+	if path[0] == s
+		return path
+	return []
+
