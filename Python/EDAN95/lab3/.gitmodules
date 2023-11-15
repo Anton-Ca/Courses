@@ -1,0 +1,6 @@
+[submodule "Courses/Python/EDAN95/lab3/EDAN95-Assignment-3"]
+	path = Courses/Python/EDAN95/lab3/EDAN95-Assignment-3
+	url = https://github.com/Anton-Ca/EDAN95-Assignment-3.git
+[submodule "EDAN95-Assignment-3"]
+	path = EDAN95-Assignment-3
+	url = https://github.com/Anton-Ca/EDAN95-Assignment-3.git
