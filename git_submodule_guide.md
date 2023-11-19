@@ -1,6 +1,6 @@
 # Guide on how to setup and properly link a submodule
 
-First we want to create the nested repository on githubs website and give it a name.
+First we want to create the nested repository on githubs website and give it a name. We might also have to add some initial file to the repository so it's not empty before proceeding to step 1.
 
 1. Then we want to navigate to the folder in the repository where we want to create it and run this command to clone it:
 ```
