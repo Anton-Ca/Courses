@@ -1,6 +1,6 @@
-[submodule "Python/EDAN95/EDAN96-lab4"]
-	path = Python/EDAN95/EDAN96-lab4
+[submodule "Python/EDAN95_96/EDAN96-lab4"]
+	path = Python/EDAN95_96/EDAN96-lab4
 	url = https://github.com/Anton-Ca/EDAN96-lab4.git
-[submodule "Python/EDAN95/lab5"]
-	path = Python/EDAN95/lab5
+[submodule "Python/EDAN95_96/lab5"]
+	path = Python/EDAN95_96/lab5
 	url = https://github.com/Anton-Ca/EDAN96-lab5.git
