@@ -1,6 +1,3 @@
-[submodule "Python/EDAN95/lab4"]
-	path = Python/EDAN95/lab4
-	url = /Users/larscarlsson/Programmering/Courses/Python/EDAN95/lab4
 [submodule "Python/EDAN95/EDAN96-lab4"]
 	path = Python/EDAN95/EDAN96-lab4
-	url = /Users/larscarlsson/Programmering/Courses/Python/EDAN95/EDAN96-lab4/
+	url = https://github.com/Anton-Ca/EDAN96-lab4.git
