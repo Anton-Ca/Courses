@@ -14,7 +14,7 @@ git submodule add absolute-path/name
 ```
 git submodule update --init
 ```
-4. The url will likely be wrong so copy the url from the nested repository on github and replace the line that says:
+4. The url will likely be wrong so copy the url from the nested repository on github and replace the line in the file .gitmodules (located in root of repository), that says:
 ```
 url = absolute-path/name
 ```
