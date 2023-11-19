@@ -7,3 +7,6 @@
 [submodule "Python/EDAN95_96/lab5"]
 	path = Python/EDAN95_96/lab5
 	url = https://github.com/Anton-Ca/EDAN96-lab5.git
+[submodule "Python/EDAN95_96/lab9"]
+	path = Python/EDAN95_96/lab9
+	url = https://github.com/Anton-Ca/EDAN96-lab3
